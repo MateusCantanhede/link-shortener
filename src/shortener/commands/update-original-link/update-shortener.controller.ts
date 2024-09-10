@@ -1,5 +1,5 @@
 import { Controller, Body, Patch, Param, Inject } from '@nestjs/common';
-import { UpdateShortenerCommand } from './/update-shortener.command';
+import { UpdateShortenerCommand } from './update-shortener.command';
 import { IUpdateOriginalUrlHandler } from './update-original-link.handler.interface';
 
 @Controller()

@@ -6,9 +6,7 @@ import { Shortener } from './entities/shortener.entity';
 import { UpdateOriginalUrlHandler } from './commands/update-original-link/update-original-url.handler';
 import { GetOriginalByShortUrlHandler } from './queries/get-original-by-short-url/get-original-by-short-url.handler';
 import { UpdateShortenerController } from './commands/update-original-link/update-shortener.controller';
-import {
-  GetOriginalByShortUrlController
-} from './queries/get-original-by-short-url/get-original-by-short-url.controller';
+import { GetOriginalByShortUrlController } from './queries/get-original-by-short-url/get-original-by-short-url.controller';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Shortener])],
