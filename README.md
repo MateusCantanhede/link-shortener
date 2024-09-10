@@ -1,43 +1,23 @@
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Project setup
-
+A TypeScript shortenerURL project.
+## add env file
 ```bash
-$ npm install
+# .env
+DATABASE_HOST=db
+DATABASE_PORT=5432
+DATABASE_USER=postgres
+DATABASE_PASSWORD=postgres
+DATABASE_NAME=mydatabase
 ```
 
 ## Compile and run the project
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Run tests
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+# run
+$ docker compose up --build
 ```
 
 ## Stay in touch
 
-- Author - [Mateus Cantanhede]()
-
-## License
-
-This Repository is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+- Author - Mateus Cantanhede
