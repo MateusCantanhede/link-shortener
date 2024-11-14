@@ -1,0 +1,38 @@
+services:
+  api:
+    depends_on:
+      - db
+    container_name: shortener-api
+    build:
+      context: .
+    environment:
+      - DATABASE_HOST=${DATABASE_HOST}
+      - DATABASE_PORT=${DATABASE_PORT}
+      - DATABASE_USER=${DATABASE_USER}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_NAME=${DATABASE_NAME}
+      - JWT_SECRET=${JWT_SECRET}
+    ports:
+      - "3000:3000"
+    restart: always
+    networks:
+      - shortener-network
+  db:
+    container_name: shortener-db
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_DB=${DATABASE_NAME}
+    ports:
+      - "${DATABASE_PORT}:${DATABASE_PORT}"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: always
+    networks:
+      - shortener-network
+volumes:
+  pgdata:
+networks:
+  shortener-network:
+    driver: bridge
